@@ -67,14 +67,14 @@ const helpers = require('./lib/helpers');
 //     console.log('Failas sekmingai istrintas.');
 // })
 
-// _data.list('marks', (err, data) => {
-//     if (err || !data) {
-//         console.log(err);
-//         return false;
-//     }
+_data.list('marks', (err, data) => {        // err, data - grazina klaida arba duomenis
+    if (err || !data) {
+        console.log(err);
+        return false;
+    }
 
-//     console.log(data);
-// })
+    console.log(data);
+})
 
 const zodis = 'Labas rytas';
 const uzsifruotasZodis = helpers.hash(zodis);
