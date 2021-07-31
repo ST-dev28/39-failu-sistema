@@ -1,5 +1,5 @@
-const { log } = require('console');
 const _data = require('./lib/data');
+const helpers = require('./lib/helpers');
 
 // _data.read('users', 'petras', (err, data) => {
 //     if (err || !data) {
@@ -7,7 +7,8 @@ const _data = require('./lib/data');
 //         return false;
 //     }
 
-//     const obj = JSON.parse(data);
+//     console.log(data);
+//     const obj = helpers.parseJsonToObject(data);
 //     console.log(obj);
 // })
 
@@ -27,7 +28,7 @@ const _data = require('./lib/data');
 //             return false;
 //         }
 
-//         const obj = JSON.parse(data);
+//         const obj = helpers.parseJsonToObject(data);
 //         console.log(obj);
 //     })
 // });
@@ -52,16 +53,43 @@ const _data = require('./lib/data');
 //             return false;
 //         }
 
-//         const obj = JSON.parse(data);
+//         const obj = helpers.parseJsonToObject(data);
 //         console.log(obj);
 //     })
 // });
 
-_data.delete('users', 'maryte', (err) => {
-    if (err) {
-        console.log(err);
-        return false;
-    }
+// _data.delete('users', 'maryte', (err) => {
+//     if (err) {
+//         console.log(err);
+//         return false;
+//     }
 
-    console.log('Failas sekmingai istrintas.');
-})
+//     console.log('Failas sekmingai istrintas.');
+// })
+
+// _data.list('marks', (err, data) => {
+//     if (err || !data) {
+//         console.log(err);
+//         return false;
+//     }
+
+//     console.log(data);
+// })
+
+const zodis = 'Labas rytas';
+const uzsifruotasZodis = helpers.hash(zodis);
+
+console.log(zodis);
+console.log(uzsifruotasZodis);
+
+const zodis2 = 'Labas rytat';
+const uzsifruotasZodis2 = helpers.hash(zodis2);
+
+console.log(zodis2);
+console.log(uzsifruotasZodis2);
+
+const zodis3 = 'Labas rytat';
+const uzsifruotasZodis3 = helpers.hash(zodis3);
+
+console.log(zodis3);
+console.log(uzsifruotasZodis3);
