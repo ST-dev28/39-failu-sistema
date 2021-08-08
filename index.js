@@ -1,4 +1,6 @@
+// index.js paleidzia koda (visa "zaidimu aikstele")
 const _data = require('./lib/data');
+//console.log(_data);
 const helpers = require('./lib/helpers');
 
 // _data.read('users', 'petras', (err, data) => {
@@ -7,8 +9,22 @@ const helpers = require('./lib/helpers');
 //         return false;
 //     }
 
+// _data.read('users', 'marsietis', (err, data) => {
+//     if (err || !data) {
+//         console.log('Nepavyko perskaityti failo...');
+//         return false;
+//     }
+// nerado, nes tokio userio nera
+
+// _data.read('users2', 'petras', (err, data) => { 
+//     if (err || !data) {
+//         console.log('Nepavyko perskaityti failo...');
+//         return false;
+//     }
+// nerado, nes tokio folderio nera
+
 //     console.log(data);
-//     const obj = helpers.parseJsonToObject(data);
+//     const obj = helpers.parseJsonToObject(data);  // jei metodui parseJsonToObject duosiu duomenis, blogiausiu atveju, jei yra klaida, gausiu tuscia objekta
 //     console.log(obj);
 // })
 
@@ -28,6 +44,9 @@ const helpers = require('./lib/helpers');
 //             return false;
 //         }
 
+//         const obj = JSON.parse(data)  // jei duomenys atkeliajo, juos dekodina (isanalizuoja)
+//         console.log(obj);      // isspausdina gauta informacija
+
 //         const obj = helpers.parseJsonToObject(data);
 //         console.log(obj);
 //     })
@@ -37,7 +56,7 @@ const helpers = require('./lib/helpers');
 //     name: 'Petras',
 //     age: 99,
 //     car: 'Audi',
-//     color: 'red'
+//     color: 'red'    // itraukiam nauju duomenu 
 // }
 // _data.update('users', 'petras', petras, (err) => {
 //     if (err) {
@@ -58,7 +77,7 @@ const helpers = require('./lib/helpers');
 //     })
 // });
 
-// _data.delete('users', 'maryte', (err) => {
+// _data.delete('users', 'maryte', (err) => {     //istrinam faila "maryte"
 //     if (err) {
 //         console.log(err);
 //         return false;
@@ -66,6 +85,19 @@ const helpers = require('./lib/helpers');
 
 //     console.log('Failas sekmingai istrintas.');
 // })
+
+
+// jei duomeny faile yra klaida (pvz. nepadetas kablelis ar kt)
+console.log(data);
+let obj = null;
+try {
+    obj = JSON.parse(data);
+} catch (err) {
+    obj = {};
+}
+console.log(obj);
+
+
 
 _data.list('marks', (err, data) => {        // err, data - grazina klaida arba duomenis
     if (err || !data) {

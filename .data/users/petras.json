@@ -1,1 +1,6 @@
-{"name":"Petras","age":99,"car":"Audi","color":"red"}
+{
+    "name": "Petras",
+    "age": 99,
+    "car": "Audi",
+    "color": "red"
+}

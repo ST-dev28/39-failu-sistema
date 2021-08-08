@@ -13,3 +13,5 @@ A. Failai ir direktorijos:
 
  B.    lib folderis  - ivairiu projektu talpykla
  C.   .data folderis skirtas ivairaus pobudzio failams
+
+ json - vienas taupiausiu vietos atzvilgiu tekstiniu formatu
